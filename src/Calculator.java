@@ -10,6 +10,8 @@ public class Calculator implements ActionListener{
     JButton[] functionButtons = new JButton[8];
     JButton addButton, subButton, mulButton, divButton;
     JButton decButton, equButton, delButton, clrButton;
+
+    JLabel WelButton;
     JPanel panel;
 
     Font myFont = new Font("Ink Free", Font.BOLD,30);
@@ -37,6 +39,7 @@ public class Calculator implements ActionListener{
         clrButton = new JButton("Clear");
         delButton = new JButton("Delete");
 
+
         functionButtons[0] = addButton;
         functionButtons[1] = subButton;
         functionButtons[2] = mulButton;
@@ -45,6 +48,7 @@ public class Calculator implements ActionListener{
         functionButtons[5] = equButton;
         functionButtons[6] = delButton;
         functionButtons[7] = clrButton;
+
 
         for (int i = 0; i < 8; i ++) {
             functionButtons[i].addActionListener(this);
@@ -60,7 +64,7 @@ public class Calculator implements ActionListener{
         }
 
         delButton.setBounds(50,430,145,50);
-        clrButton.setBounds(205,430,145,50);
+        clrButton.setBounds(205,430,145,50);;
 
 
         panel = new JPanel();
@@ -85,22 +89,20 @@ public class Calculator implements ActionListener{
         panel.add(equButton);
         panel.add(divButton);
 
-
-
+        JLabel label = new JLabel("Welcome to MyCalculator");
+        label.setBounds(50,50,50,50);
+        frame.add(label);
 
         frame.add(panel);
         frame.add(delButton);
         frame.add(clrButton);
         frame.add(textfield);
         frame.setVisible(true);
-
     }
 
     public static void main(String[] args) {
         Calculator calc = new Calculator();
         }
-
-
     @Override
     public void actionPerformed(ActionEvent e) {
     for ( int i = 0; i < 10; i ++){
@@ -108,7 +110,7 @@ public class Calculator implements ActionListener{
             textfield.setText(textfield.getText().concat(String.valueOf(i)));
         }
     }
-    if ( e.getSource() == decButton) {
+    if (e.getSource() == decButton) {
         textfield.setText(textfield.getText().concat("."));
     }
     if ( e.getSource() == addButton) {
@@ -151,7 +153,6 @@ public class Calculator implements ActionListener{
             }
             textfield.setText(String.valueOf(result));
             num1 = result;
-
         }
         if (e.getSource() == clrButton) {
             textfield.setText("");
