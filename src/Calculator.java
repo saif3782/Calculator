@@ -21,11 +21,11 @@ public class Calculator implements ActionListener{
     Calculator() {
     frame = new JFrame("Calculator");
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.setSize(500,600);
+    frame.setSize(500,660);
     frame.setLayout(null);
 
     textfield = new JTextField();
-    textfield.setBounds(50,20,300,50);
+    textfield.setBounds(70,110,295,50);
     textfield.setFont(myFont);
     textfield.setEditable(false);
     // no one can type in anything except if they click buttons
@@ -63,12 +63,12 @@ public class Calculator implements ActionListener{
             numberButtons[i].addActionListener(this);
         }
 
-        delButton.setBounds(50,430,145,50);
-        clrButton.setBounds(205,430,145,50);;
+        delButton.setBounds(60,530,145,50);
+        clrButton.setBounds(220,530,145,50);;
 
 
         panel = new JPanel();
-        panel.setBounds(50,100,300,300);
+        panel.setBounds(65,200,300,300);
         panel.setLayout(new GridLayout(4,4,10,10));
 
 
@@ -89,8 +89,9 @@ public class Calculator implements ActionListener{
         panel.add(equButton);
         panel.add(divButton);
 
-        JLabel label = new JLabel("Welcome to MyCalculator");
-        label.setBounds(50,50,50,50);
+        JLabel label = new JLabel("Welcome to my Calculator!");
+        label.setFont(myFont);
+        label.setBounds(47,5,450,120);
         frame.add(label);
 
         frame.add(panel);
